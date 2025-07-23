@@ -1,0 +1,48 @@
+module axi#(
+    parameter DATA_WIDTH = 32, //Data width of the AXI interface
+    parameter OTHER, //test
+    parameter OTHER2 = 0
+    )(
+    input clk_in, reset_in,
+
+    inout[2:0] test,
+
+    // Controller interface
+    input write_enable,// this is the write enable port
+    input [DATA_WIDTH - 1:0] write_data, write_address,
+    input [3:0] write_strobe,
+    output reg [1:0] write_response,
+    output reg write_response_valid,
+
+    input read_enable,
+    input [DATA_WIDTH - 1:0] read_address,
+    output reg [31:0] read_data,
+    output reg [1:0] read_response,
+    output reg read_response_valid,
+
+    // AXI interface with IP
+    output s_axi_aclk,
+    output s_axi_sreset,
+
+    output reg [DATA_WIDTH - 1:0] s_axi_awaddr,
+    output reg s_axi_awvalid,
+    input wire s_axi_awready,
+
+    output reg [DATA_WIDTH - 1:0] s_axi_wdata,
+    output reg [3:0] s_axi_wstrb,
+    output reg s_axi_wvalid,
+    input wire s_axi_wready,
+
+    input wire [1:0] s_axi_bresp,
+    input wire s_axi_bvalid,
+    output reg s_axi_bready,
+
+    output reg [DATA_WIDTH - 1:0] s_axi_araddr,
+    output reg s_axi_arvalid,
+    input wire s_axi_arready,
+
+    input wire [DATA_WIDTH - 1:0] s_axi_rdata,
+    input wire [1:0] s_axi_rresp,
+    input wire s_axi_rvalid,
+    output reg s_axi_rready
+);

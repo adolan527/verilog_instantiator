@@ -1,0 +1,35 @@
+# Comments use hash
+# Variables are called with $VARIABLE_NAME$ syntax
+# Blocks are declared with [START BLOCK_NAME] and [END BLOCK_NAME]
+# Blocks are regions which can be enabled or disable when writing
+# Variable and block names can be the same, they use separate 'namespaces'
+# Variables can be defined inline with '$foo=value$'
+# The only data type is string
+
+[START TITLE]
+$COMMENT_LINE$
+$COMMENT_PAD$$MODULE_NAME$$COMMENT_PAD$
+$COMMENT_LINE$
+[END TITLE]
+
+[START INPUT]
+$COMMENT_PAD$"Inputs"$COMMENT_PAD$
+$INPUT_NETS$
+[END INPUT]
+
+[START OUTPUT]
+$COMMENT_PAD$"Outputs"$COMMENT_PAD$
+$OUTPUT_NETS$
+[END OUTPUT]
+
+[START INOUT]
+$COMMENT_PAD$"Inouts"$COMMENT_PAD$
+$INOUT_NETS$
+[END INOUT]
+
+[START INSTANCE]
+$INSTANCE$
+[END INSTANCE]
+
+
+
